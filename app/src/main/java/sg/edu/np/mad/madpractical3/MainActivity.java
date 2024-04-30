@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tvName = findViewById(R.id.tvName);
         TextView tvDescription = findViewById(R.id.tvDescription);
         Button btnFollow = findViewById(R.id.btnFollow);
+        Button msg = findViewById(R.id.button2);
 
         tvName.setText(user.name +" "+ randomInt);
         tvDescription.setText(user.description);
@@ -51,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
                     btnFollow.setText("Follow");
                     Toast.makeText(MainActivity.this,"Not Followed",Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        msg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MessageGroup.class);
+                startActivity(intent);
+
             }
         });
     }
